@@ -1,0 +1,19 @@
+
+$primary: #142F43;
+$primary-l: lighten($primary, 5);
+$primary-xl: lighten($primary, 10);
+
+$secondary: #396EB0;
+$secondary-xo: darken($secondary, 20);
+$secondary-o: darken($secondary, 10);
+$secondary-l: lighten($secondary, 5);
+$secondary-xl: lighten($secondary, 10);
+
+$error: #FF2442;
+
+$text: #FEF9EF;
+$text-o: darken($text, 5);
+
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669f2;

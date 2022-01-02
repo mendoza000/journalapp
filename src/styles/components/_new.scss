@@ -1,0 +1,87 @@
+.new__container{
+	margin: 0rem auto 6rem auto;
+}
+.new__topbar{
+	background-color: $secondary;
+	padding: 0.5rem 2rem;
+	box-shadow: 0px 10px 15px -4px $primary-l;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 89vw;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	div{
+		display: flex;
+		grid-gap: 1rem;
+		box-icon{
+			fill: $text;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 3.3rem;
+			height: 3.3rem;
+			padding: 0.5rem;
+			border-radius: 5px;
+			cursor: pointer;
+
+			transition: background-color 0.3s;
+			&:hover{
+				background-color: $secondary-o;
+			}
+		}
+	}
+}
+
+.new__content{
+	display: grid;
+	grid-template-columns: 1fr;
+	overflow-y: none;
+	margin-top: 6rem;
+}
+.new__input-title,
+.new__textarea{
+	border: none;
+	outline: none;
+	background-color: transparent;
+	resize: none;
+	padding: 1rem;
+	font-size: 1.6rem;
+	color: $text;
+	font-family: inherit;
+}
+.new__input-title{
+	font-size: 2rem;
+	font-weight: bold;
+}
+.new__textarea{
+	height: 76vh;
+	margin-bottom: 1rem;
+}
+
+.new__no-note{
+	margin-top: 6rem;
+	height: 88vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	box-icon{
+		fill: white;
+		height: 9rem;
+		width: 9rem;
+	}
+	h3{
+		margin-bottom: 1.5rem;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+	p{
+		text-align: center;
+		color: darken($text, 10);
+		margin-bottom: 5rem;
+	}
+}

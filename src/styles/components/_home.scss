@@ -1,0 +1,19 @@
+.home__container{
+	margin: 2rem 3rem;
+}
+.home__nav-button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+	border-radius: 10px;
+	cursor: pointer;
+	fill: $text;
+	
+	box-icon{
+		height: 3rem;
+		width: 3rem;
+	}
+}
+
