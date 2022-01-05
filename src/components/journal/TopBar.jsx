@@ -1,6 +1,12 @@
 import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {startSave} from '../../actions/notes'
 
 const TopBar = () => {
+	const dispatch = useDispatch()
+	const {asd} = useSelector(state => state)
+	console.log(asd);
+
 	const data = new Date
 	const day = data.getDay()
 
@@ -25,6 +31,10 @@ const TopBar = () => {
 		const nav = document.querySelector('.ui__nav');
 		nav.style.left = '0'
 	}
+
+	const handleSave = () => {
+		dispatch( startSave(note) )
+	}
 	
 	return(
 		<div className="new__topbar">
@@ -42,7 +52,10 @@ const TopBar = () => {
 
 			<div>
 				<box-icon name='image-add'></box-icon>
-				<box-icon name='save'></box-icon>
+				<box-icon 
+					name='save'
+					onClick={handleSave}
+				></box-icon>
 			</div>
 		</div>
 	)

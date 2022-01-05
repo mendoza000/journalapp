@@ -1,43 +1,23 @@
 import React from 'react'
-import {useSelector, useDispatch} from 'react-redux'
-import TopBar from './TopBar'
+import {useSelector} from 'react-redux'
 import 'boxicons'
+import TopBar from './TopBar'
+import {NoNoteSelect} from './NoNoteSelect'
+import {EditNote} from './EditNote'
 
 const JournalScreen = ({history}) => {
 
 	const {notes} = useSelector( state => state )
-	
+	const {active: note} = notes
+
 	return(
 		<div className="home__container">
 			<TopBar />
 
 			{
-				(notes.active === null)
-				? (
-					<div className="new__no-note">
-						<box-icon 
-							name='note'>
-						</box-icon>
-
-						<h3>
-							¡No hay ninguna nota seleccionada!
-						</h3>
-						<p>Puedes crear una nota nueva o editar alguna ya existente desde el menu</p>
-					</div>
-				)
-				: (
-				  <div className="new__content">
-						<input 
-							type="text"
-							placeholder="Un asombroso titulo"
-							className="new__input-title"
-						/>
-						<textarea
-							placeholder="¿Qué paso hoy?"
-							className="new__textarea"
-						></textarea>
-					</div>
-				)
+				(note === null)
+				? ( <NoNoteSelect /> )
+				: ( <EditNote note={note}/> )
 			}
 
 		</div>

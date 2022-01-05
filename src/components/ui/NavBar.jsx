@@ -6,6 +6,11 @@ import Note from '../journal/Note.jsx'
 import {StartLogout} from '../../actions/auth'
 import {startNewNote} from '../../actions/notes'
 
+export const handleClose = () => {
+	const nav = document.querySelector('.ui__nav');
+	nav.style.left = '-150vw'
+}
+	
 const NavBar = () => {
 
 	const {auth, notes} = useSelector( state => state)
@@ -14,10 +19,6 @@ const NavBar = () => {
 	const handleLogout = () => {
 		dispatch(StartLogout())
 	}
-	const handleClose = () => {
-		const nav = document.querySelector('.ui__nav');
-		nav.style.left = '-150vw'
-	}	
 	const handleCreateNew = () => {
 		dispatch(startNewNote())
 		handleClose()
@@ -55,8 +56,7 @@ const NavBar = () => {
 					notes.notes.map(e => (
 						<Note 
 							key={e.id}
-							title={e.title}
-							text={e.body}
+							{...e}
 						/>
 					))
 				}
