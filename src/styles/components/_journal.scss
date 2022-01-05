@@ -10,7 +10,7 @@
 }
 .journal__container-note{
 	background-color: $primary;
-	padding: 1.5rem;
+	padding: 2rem 1.5rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
@@ -18,16 +18,10 @@
 	border-bottom: 5px solid $secondary;
 	// border-top: 4px solid $secondary;
 	box-shadow: 0px 5px 25px -4px rgba(0, 0, 0, 0.4);
-	
+
 	p:first-child{
 		font-weight: bold;
 		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
-}
-.journal_note-list{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	grid-gap: 2rem;
 }

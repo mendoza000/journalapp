@@ -1,6 +1,5 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {StartLogout} from '../../actions/auth'
 import TopBar from './TopBar'
 import 'boxicons'
 

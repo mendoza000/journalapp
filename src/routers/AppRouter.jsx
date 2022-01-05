@@ -10,6 +10,7 @@ import AuthRouter from './AuthRouter'
 import JournalRouter from './JournalRouter'
 import {firebase} from '../firebase/firebaseConfig'
 import {login} from '../actions/auth'
+import {startLoadNotes} from '../actions/notes'
 
 const AppRouter = () => {
 	const dispatch = useDispatch()
@@ -18,9 +19,12 @@ const AppRouter = () => {
 	const [isLogged, setIsLogged] = useState(false)
 
 	useEffect( () => {
-		firebase.auth().onAuthStateChanged((user) => {
+		firebase.auth().onAuthStateChanged(async (user) => {
 			if (user && user.uid) {
 				dispatch( login(user.uid, user.displayName) )
+
+				dispatch(startLoadNotes(user.uid))
+
 				setIsLogged(true)
 			}else{
 				setIsLogged(false)
