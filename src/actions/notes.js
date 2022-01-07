@@ -1,3 +1,5 @@
+// import Swal from 'sweetalert2'
+
 import {db} from '../firebase/firebaseConfig'
 import {types} from '../types/types'
 import {loadNotes} from '../helpers/loadNotes'
@@ -48,7 +50,50 @@ export const startSave = (note) => {
 		const noteToFirestore = {...note}
 		delete noteToFirestore.id
 
-		await db.doc(`${uid}/journal/notes${note.id}`).update(noteToFirestore)
+		try{
+			await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
+			console.log("Nota guardada");
+			dispatch( startLoadNotes(uid) )
+
+		}catch(e){
+			console.error(e);
+			console.warn("Error al guardar la nota!")
+		}
 
 	}
 }
+
+export const refreshNote = (id, note) => ({
+	type: types.noteUpdate,
+	payload: {
+		id,
+		note: {
+			id,
+			...note
+		}
+	}
+})
+
+export const startDeleting = (id) => {
+	return async (dispatch, getState) => {
+		const {uid} = getState().auth;
+
+		try{
+			await db.doc(`${uid}/journal/notes/${id}`).delete()
+			console.log("Nota eliminada");
+			dispatch( deleteNote(id) )
+
+		}catch(e){
+			console.warn("Error al eliminar la nota");
+			console.error(e);
+		}
+
+	}
+}
+
+export const deleteNote = (id) => ({
+	type: types.noteDelete,
+	payload: {
+		id
+	}
+})

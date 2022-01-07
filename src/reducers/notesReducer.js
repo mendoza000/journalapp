@@ -27,6 +27,29 @@ export const notesReducer = (state = initialState, action) => {
 				...state,
 				notes: action.payload
 			}
+
+		case types.noteUpdate:
+			return{
+				...state,
+				notes: state.notes.map(
+					note => note.id === action.payload.id
+					? action.payload.note
+					: note
+				)
+			}
+		case types.noteDelete:
+			const newListNotes = []
+			state.notes.forEach(note => {
+				if (note.id !== action.payload.id) {
+					newListNotes.push(note)
+				}
+			})
+
+			return{
+				...state,
+				notes: [...newListNotes],
+				active: null
+			}
 		
 		default:
 			return state
