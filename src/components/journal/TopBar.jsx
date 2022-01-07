@@ -1,4 +1,5 @@
 import React from 'react'
+import { Toaster } from 'react-hot-toast';
 import {useDispatch, useSelector} from 'react-redux'
 import {startSave, startDeleting} from '../../actions/notes'
 
@@ -39,34 +40,39 @@ const TopBar = () => {
 	}
 	
 	return(
-		<div className="new__topbar">
-			<button
-				className="home__nav-button"
-				onClick={handleOpen}>
-				<box-icon 
-					name='menu'>
-				</box-icon>
-			</button>
+	  <>
+			<div className="new__topbar">
+				<button
+					className="home__nav-button"
+					onClick={handleOpen}>
+					<box-icon 
+						name='menu'>
+					</box-icon>
+				</button>
 
-			<span>
-				{dayReal} {dayNum}
-			</span>
+				<span>
+					{dayReal} {dayNum}
+				</span>
 
-			<div className={(
-				note === null 
-				? "new__disabled"
-				: ""
-				)}>
-				<box-icon 
-					name='save'
-					onClick={handleSave}
-				></box-icon>
-				<box-icon 
-					name='trash'
-					onClick={handleDelete}
-				></box-icon>
+				<div className={(
+					note === null 
+					? "new__disabled"
+					: ""
+					)}>
+					<box-icon 
+						name='save'
+						onClick={handleSave}
+					></box-icon>
+					<box-icon 
+						name='trash'
+						onClick={handleDelete}
+					></box-icon>
+				</div>
 			</div>
-		</div>
+			<Toaster 
+				position="bottom-center"
+			/>
+		</>
 	)
 
 }

@@ -1,4 +1,4 @@
-// import Swal from 'sweetalert2'
+import toast from 'react-hot-toast';
 
 import {db} from '../firebase/firebaseConfig'
 import {types} from '../types/types'
@@ -53,11 +53,13 @@ export const startSave = (note) => {
 		try{
 			await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
 			console.log("Nota guardada");
+			toast.success('Nota guardada!')
 			dispatch( startLoadNotes(uid) )
 
 		}catch(e){
 			console.error(e);
 			console.warn("Error al guardar la nota!")
+			toast.error("Error al guardar la nota.")
 		}
 
 	}
@@ -81,11 +83,13 @@ export const startDeleting = (id) => {
 		try{
 			await db.doc(`${uid}/journal/notes/${id}`).delete()
 			console.log("Nota eliminada");
+			toast.success('Nota borrada!')
 			dispatch( deleteNote(id) )
 
 		}catch(e){
 			console.warn("Error al eliminar la nota");
 			console.error(e);
+			toast.error("Error al borrar la nota.")
 		}
 
 	}
