@@ -6,6 +6,7 @@ import {
 	initLoading,
 	endLoading
 } from './ui.js'
+import toast from 'react-hot-toast';
 
 export const loginWithMailPass = (mail, pass) => {
 	return async (dispatch) => {
@@ -90,9 +91,15 @@ export const login = (uid, displayName) => {
 
 export const StartLogout = () => {
 	return async (dispatch) => {
-		await firebase.auth().signOut();
-
-		dispatch( logout() )
+		try {
+			await firebase.auth().signOut();
+			dispatch( logout() )
+			toast.success('Sesión cerrada!')
+		}catch(e){
+			console.error(e);
+			console.warn("Error al cerrar la sesion");
+			toast.error('No se pudo cerrar la sesión.')
+		}
 	}
 }
 

@@ -2,9 +2,10 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import 'boxicons'
+
 import Note from '../journal/Note.jsx'
 import {StartLogout} from '../../actions/auth'
-import {startNewNote} from '../../actions/notes'
+import {startNewNote, logoutCleaning} from '../../actions/notes'
 
 export const handleClose = () => {
 	const nav = document.querySelector('.ui__nav');
@@ -18,6 +19,7 @@ const NavBar = () => {
 
 	const handleLogout = () => {
 		dispatch(StartLogout())
+		dispatch(logoutCleaning())
 	}
 	const handleCreateNew = () => {
 		dispatch(startNewNote())
