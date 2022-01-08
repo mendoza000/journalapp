@@ -32,12 +32,19 @@ export const loginWithMailPass = (mail, pass) => {
 
 			if (message.includes("network")) {
 				dispatch(setError("Error de red, intente de nuevo"))
+				toast.error("Error de red, intente de nuevo.")
+
 			} else if (message.includes("password")) {
 				dispatch(setError("Contraseña incorrecta"))
+				toast.error("Contraseña incorrecta.")
+
 			} else if (message.includes("There is no user record corresponding")) {
 				dispatch(setError("Correo no registrado"))
+				toast.error("Correo no registrado.")
+
 			} else {
 				dispatch(setError("Error desconocido, intente de nuevo"))
+				toast.error("Error desconocido, intente de nuevo.")
 			}
 
 			dispatch( endLoading() )
@@ -71,6 +78,7 @@ export const registerWithMailPass = (mail, pass, name) => {
 			displayName
 		} = user
 
+		toast.success("Registro exitoso!")
 		dispatch(login(uid, displayName))
 
 	}

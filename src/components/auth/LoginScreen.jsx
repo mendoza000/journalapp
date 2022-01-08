@@ -1,7 +1,9 @@
 import React from 'react' 
 import {Link} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
+import { Toaster } from 'react-hot-toast';
 import 'boxicons'
+
 // Componentes
 import ReturnPage from '../ui/ReturnPage'
 // Custom Hooks
@@ -59,13 +61,7 @@ const LoginScreen = ({history}) => {
 				autoComplete="off"
 			/>
 			<div className="auth__form-btn">
-
-				<div className={`auth__alert ${
-					(msgError !== null) && 'auth__alert-error'	
-				}`}>
-					<box-icon name='error'></box-icon>
-					<span>{msgError}</span>
-				</div>
+ 
 
 				<div className="auth__social-login" onClick={handleGoogleLogin}>
 					<box-icon type='logo' name='google'></box-icon>
@@ -91,6 +87,10 @@ const LoginScreen = ({history}) => {
 					No tengo una cuenta
 				</Link>
 			</div>
+
+			<Toaster 
+				position="bottom-center"
+			/>
 		</div>
 	)
 
