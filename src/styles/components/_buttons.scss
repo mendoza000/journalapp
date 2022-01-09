@@ -95,3 +95,9 @@
 	  background: $button-active-blue;
 	}
 }
+
+@media screen and (min-width: 425px){
+	.btn-block{
+		width: 32.5rem;
+	}
+}

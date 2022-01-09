@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import { Toaster } from 'react-hot-toast';
 import 'boxicons'
+import 'animate.css'
 
 // Componentes
 import ReturnPage from '../ui/ReturnPage'
@@ -33,7 +34,7 @@ const LoginScreen = ({history}) => {
 	
 	return(
 		<div 
-			className="auth__form">
+			className="auth__form animate__animated animate__fadeIn animate__faster">
 			<ReturnPage path={"/auth"} history={history}/>
 
 			<h1 className="auth__form-title">

@@ -8,9 +8,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 88%;
-	margin-left: auto;
-	margin-right: auto;
+	width: 90%;
 
 	div{
 		display: flex;
@@ -100,5 +98,57 @@
 		color: darken($text, 10);
 		margin-bottom: 5rem;
 		max-width: 28rem;
+	}
+}
+@media screen and (min-width: 460px){
+	.new__topbar{
+		width: 91%;
+	}
+}
+@media screen and (min-width: 520px){
+	.new__topbar{
+		width: 92%;
+	}
+}
+@media screen and (min-width: 600px){
+	.new__topbar{
+		width: 93%;
+	}
+}
+@media screen and (min-width: 700px){
+	.new__topbar{
+		width: 94%;
+	}
+}
+@media screen and (min-width: 800px){
+	.new__topbar{
+		width: 95%;
+	}
+}
+@media screen and (min-width: 900px){
+	.new__topbar{
+		width: 96%;
+	}
+}
+@media screen and (min-width: 900px){
+	.new__topbar{
+		min-width: 70vw;
+		max-width: 70vw;
+		margin-left: -2rem;
+	}
+}
+@media screen and (min-width: 900px){
+	.new__topbar{
+		margin-left: -2rem;
+	}
+}
+@media screen and (min-width: 1300px){
+	.new__topbar{
+		margin-left: -3rem;
+	}
+}
+@media screen and (min-width: 1400px){
+	.new__topbar{
+		margin-left: -4rem;
 	}
 }

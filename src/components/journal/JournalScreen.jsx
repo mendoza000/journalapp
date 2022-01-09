@@ -1,9 +1,12 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import 'boxicons'
+import 'animate.css'
+
 import TopBar from './TopBar'
 import {NoNoteSelect} from './NoNoteSelect'
 import {EditNote} from './EditNote'
+import NavBarInJournal from '../ui/NavBarInJournal'
 
 const JournalScreen = ({history}) => {
 
@@ -11,8 +14,12 @@ const JournalScreen = ({history}) => {
 	const {active: note} = notes
 
 	return(
-		<div className="home__container">
-			<TopBar />
+		<div className="home__container animate__animated animate__fadeIn animate__faster">
+
+			<NavBarInJournal />
+
+			<div className="home__journal-container">
+				<TopBar />
 
 			{
 				(note === null)
@@ -20,6 +27,7 @@ const JournalScreen = ({history}) => {
 				: ( <EditNote note={note}/> )
 			}
 
+			</div>
 		</div>
 	)
 

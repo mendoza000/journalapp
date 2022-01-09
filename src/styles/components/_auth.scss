@@ -6,7 +6,7 @@
 	width: 100vw;
 	height: 100vh;
 }
-
+ 
 .auth__box-container{
 	background-color: transparent;
 	border-radius: 5px;
@@ -188,5 +188,25 @@
 	box-icon{
 		fill: white;
 	}
+}
+
+@media screen and (min-width: 425px){
+	.auth__form-input{
+		max-width: 30rem;
+		min-width: 30rem;
+	}
+	.auth__container-btns{
+		width: 35rem;
+	}
+}
+
+@media screen and (min-width: 600px){
+	.auth__container-btns{
+		width: 40rem;
+	}
+	.auth__img{
+		width: 40rem;
+		margin-top: -3rem;
+	}	
 }
 

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import validator from 'validator'
 import 'boxicons'
 import toast,{ Toaster } from 'react-hot-toast';
+import 'animate.css'
 
 // Componentes
 import ReturnPage from '../ui/ReturnPage'
@@ -52,10 +53,10 @@ const RegisterScreen = ({history}) => {
 	}
 	
 	return(
-		<div className="auth__form">
+		<div className="auth__form animate__animated animate__fadeIn animate__faster">
 			<ReturnPage path="/auth" history={history}/>
 			<h1 className="auth__form-title">
-				¿Eres nuevo aqui?
+				¿Eres nuevo aqui? <br/>
 				¡Registrate!
 			</h1>
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import 'boxicons'
+import 'animate.css'
 // Imagenes
 import authImg from '../../../assets/auth.svg'
 
 const AuthScreen = ({history}) => {
 	
 	return(
-		<div className="auth__container">
+		<div className="auth__container animate__animated animate__fadeIn animate__faster">
 			<img src={authImg} alt="auth_img" className="auth__img"/>
 
 			<h1 className="auth__container-title">

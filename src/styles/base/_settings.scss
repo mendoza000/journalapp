@@ -18,16 +18,3 @@ $text-o: darken($text, 5);
 $white: #fff;
 $google-blue: #4285f4;
 $button-active-blue: #1669f2;
-
-body::-webkit-scrollbar {
-    width: 6px;     /* Tamaño del scroll en vertical */
-    height: 3px;    /* Tamaño del scroll en horizontal */
-}
-body::-webkit-scrollbar-thumb {
-    background-color: $secondary;
-    border-radius: 50px;
-    transition: background-color 0.5s;
-}
-body::-webkit-scrollbar-thumb:active {
-    background-color: $secondary-o;
-}
